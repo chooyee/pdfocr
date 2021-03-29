@@ -1,13 +1,21 @@
 import imghdr
 import os
-from flask import Flask, render_template, request, redirect, url_for, abort, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, abort, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
+from controllers.comprehend import Comprehend 
+from db.sqlite import ConMan
+from controllers.conlist import GetConList
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
 app.config['UPLOAD_PATH'] = 'uploads'
 
+with ConMan() as con:
+    con._create_tables();
+if not os.path.exists('temp'):
+    os.makedirs('temp')
+    
 def validate_image(stream):
     header = stream.read(512)
     stream.seek(0)
@@ -27,16 +35,35 @@ def index():
 
 @app.route('/', methods=['POST'])
 def upload_files():
-    uploaded_file = request.files['file']
-    filename = secure_filename(uploaded_file.filename)
-    if filename != '':
-        # file_ext = os.path.splitext(filename)[1]
-        # if file_ext not in app.config['UPLOAD_EXTENSIONS'] or \
-        #         file_ext != validate_image(uploaded_file.stream):
-        #     return "Invalid image", 400
-        uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], filename))
-    return '', 204
+    try:
+        uploaded_file = request.files['file']
+        password = request.form['password']
+        print(password)
+        filename = secure_filename(uploaded_file.filename)
+        if filename != '':
+            # file_ext = os.path.splitext(filename)[1]
+            # if file_ext not in app.config['UPLOAD_EXTENSIONS'] or \
+            #         file_ext != validate_image(uploaded_file.stream):
+            #     return "Invalid image", 400
+            pdfFileName = os.path.join(app.config['UPLOAD_PATH'], filename)
+        uploaded_file.save(pdfFileName)
+
+        with Comprehend() as comprehend:
+            uuid = comprehend.Start(filename=pdfFileName, password=password, decrypt=True)
+            resultList = GetConList(uuid)
+            # return jsonify(resultList)
+            return render_template('result.html', rows=resultList)
+    except Exception as e:
+        return str(e)
 
 @app.route('/uploads/<filename>')
 def upload(filename):
     return send_from_directory(app.config['UPLOAD_PATH'], filename)
+
+@app.route('/conlist/<uuid>')
+def getConList(uuid):
+    resultList = GetConList(uuid)
+    for r in resultList:
+        print(r[0])
+    print(resultList)
+    return render_template('result.html', rows=resultList)

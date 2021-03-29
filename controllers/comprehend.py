@@ -47,6 +47,7 @@ class Comprehend:
                     print('=============================Insert======================================')
                     con.Execute(sql, params)
                     j = j+1
+            return unique_filename
         except Exception as e:
             print("Oops!", str(e), "occurred.")
             print("Oops!", e.__class__, "occurred.")

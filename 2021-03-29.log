@@ -1,0 +1,45 @@
+ERROR:root:[E050] Can't find model 'en_core_web_trf'. It doesn't seem to be a Python package or a valid path to a data directory.
+ERROR:root:cannot unpack non-iterable NoneType object
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 15:18:51] "[37mPOST / HTTP/1.1[0m" 204 -
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:21:59] "[37mPOST / HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\app.py', reloading
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:25:33] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:25:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\app.py', reloading
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:25:59] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:26:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\app.py', reloading
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:26:52] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:26:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:27:09] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:27:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:27:10] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:27:11] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:27:11] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+ERROR:root:Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:27:11] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\db\\sqlite.py', reloading
+ERROR:root:Select: Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:29:25] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:29:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\db\\sqlite.py', reloading
+ERROR:root:Select: Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+ERROR:root:sql: select * from conlist where uuid=?
+ERROR:root:Params: 786bf80e-c80a-45d7-8fb0-b6867fce0174
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:31:58] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:31:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\db\\sqlite.py', reloading
+ERROR:root:Select: Incorrect number of bindings supplied. The current statement uses 1, and there are 36 supplied.
+ERROR:root:sql: select * from conlist where uuid=?
+ERROR:root:Params: 786bf80e-c80a-45d7-8fb0-b6867fce0174
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:33:25] "[37mGET /conlist/786bf80e-c80a-45d7-8fb0-b6867fce0174 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Mar/2021 16:33:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\PythonRepo\\ocr\\controllers\\conlist.py', reloading

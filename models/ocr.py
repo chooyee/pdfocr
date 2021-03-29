@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import csv
 import sys
 import re
-import spacy
 
 try:
     from PIL import Image

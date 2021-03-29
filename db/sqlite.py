@@ -38,7 +38,6 @@ class ConMan:
     
     def Execute(self, sql, params):
         try:
-            # Create table
             con = self.Conn
             cur = con.cursor()
             if (type(params) is list):
@@ -48,9 +47,24 @@ class ConMan:
             con.commit()
         except Exception as e:
             print("Oops!", str(e), "occurred.")
-            print("Oops!", e.__class__, "occurred.")
             Logger.Error(str(e))
 
+    def Select(self, sql, params):
+        print(type(params))
+        try:
+            con = self.Conn
+            cur = con.cursor()
+            cur.execute(sql, params)
+            rows = cur.fetchall()
+            return rows
+        except Exception as e:
+            print("Select: ", str(e))
+            print("Sql: ", sql)
+            print("Params: ", params)
+            Logger.Error("Select: " + str(e))
+            Logger.Error("sql: " + sql )
+            Logger.Error("Params: " + params )
+            return []
    
     def Close_connection(self):
         if self.Conn:
