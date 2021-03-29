@@ -7,14 +7,16 @@ pip3 install Flask
 pip3 install pdf2image
 pip3 install numpy
 pip3 install pandas
+sudo apt-get install -y python3-opencv
 pip3 install opencv-python
-pip3 install -U setuptools wheel
-pip3 install -U spacy
-python3 -m spacy download en_core_web_trf
+pip install -U pip setuptools wheel
+pip install -U spacy
+python -m spacy download en_core_web_trf
 pip3 install python-dotenv
 pip3 install pytesseract
 pip3 install matplotlib
 sudo apt install tesseract-ocr
 pip3 install waitress
+sudo apt install poppler-utils
 
 >waitress-serve --port=8080 app:app 
