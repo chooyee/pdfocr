@@ -2,7 +2,7 @@ import pandas as pd
 import csv
 import spacy
 from infra.logger import Logger
-import en_core_web_trf
+
 # print(dataframe)
 # for ind in dataframe.index:
 #     print(dataframe[3][ind])
@@ -31,9 +31,8 @@ def find_name(str):
     bankName = []
     bankAcc = []
     
-    nlp = en_core_web_trf.load()
-    #nlp = spacy.load("en_core_web_trf") 
-    # nlp = spacy.load("en_core_web_sm") 
+    # nlp = spacy.load("en_core_web_trf") 
+    nlp = spacy.load("en_core_web_sm") 
     ruler = nlp.add_pipe("entity_ruler")
     patterns = [{"label": "ORG", "pattern": "AmBank (M) Berhad"},
                 {"label": "ORG", "pattern": "CIMB Bank Berhad"},
