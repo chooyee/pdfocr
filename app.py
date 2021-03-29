@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from controllers.comprehend import Comprehend 
 from db.sqlite import ConMan
 from controllers.conlist import GetConList
+from waitress import serve
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
@@ -67,3 +68,8 @@ def getConList(uuid):
         print(r[0])
     print(resultList)
     return render_template('result.html', rows=resultList)
+
+if __name__ == "__main__":
+    #app.run(host='0.0.0.0')
+    #We now use this syntax to server our app. 
+    serve(app, host='0.0.0.0', port=8080)

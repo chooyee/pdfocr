@@ -1,0 +1,11 @@
+[Unit]
+Description=Pdf OCR web application
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/python/pdfocr/venv/bin/python /home/ubuntu/python/pdfocr/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
