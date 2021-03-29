@@ -31,8 +31,8 @@ def find_name(str):
     bankName = []
     bankAcc = []
     
-    # nlp = spacy.load("en_core_web_trf") 
-    nlp = spacy.load("en_core_web_sm") 
+    nlp = spacy.load("en_core_web_trf") 
+    # nlp = spacy.load("en_core_web_sm") 
     ruler = nlp.add_pipe("entity_ruler")
     patterns = [{"label": "ORG", "pattern": "AmBank (M) Berhad"},
                 {"label": "ORG", "pattern": "CIMB Bank Berhad"},
