@@ -51,9 +51,10 @@ def upload_files():
 
         with Comprehend() as comprehend:
             uuid = comprehend.Start(filename=pdfFileName, password=password, decrypt=True)
-            resultList = GetConList(uuid)
+            # resultList = GetConList(uuid)
             # return jsonify(resultList)
-            return render_template('result.html', rows=resultList)
+            # return render_template('result.html', rows=resultList)
+            return flask.redirect("/conlist/" + uuid)
     except Exception as e:
         return str(e)
 
